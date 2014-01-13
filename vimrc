@@ -458,6 +458,9 @@ Bundle 'jimenezrick/vimerl'
 " To install goimport:
 "   go get github.com/bradfitz/goimports
 Bundle 'jnwhiteh/vim-golang'
+" Let's gofmt it before saving it
+" autocmd BufWritePre *.go :Fmt
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " To install godef:
 "   go get code.google.com/p/rog-go/exp/cmd/godef
@@ -497,10 +500,6 @@ let g:tagbar_type_go = {
     \ 'ctagsbin'  : 'gotags',
     \ 'ctagsargs' : '-sort -silent'
 \ }
-
-" Let's gofmt it before saving it
-" autocmd BufWritePre *.go :Fmt
-autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " golint
 " To install golint:
