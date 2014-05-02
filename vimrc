@@ -323,8 +323,8 @@ let g:solarized_visibility="normal"
 "=== 主题 molokai ===
 Bundle 'tomasr/molokai'
 "设置主题
-"colorscheme molokai
-colorscheme solarized
+colorscheme molokai
+"colorscheme solarized
 set background=dark
 set t_Co=256
 
@@ -566,6 +566,18 @@ nnoremap <leader>h :GundoToggle<CR>
 "
 "=============================================================
 "=============================================================
+
+"字体及其大小
+"set guifont=Monaco:h20
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 20
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h20
+  elseif has("gui_win32")
+    set guifont=Consolas:h20:cANSI
+  endif
+endif
 
 "开启语法高亮功能
 syntax enable
